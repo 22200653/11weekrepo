@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>게시글 상세보기</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/cssFile/style.css">
 </head>
 <body>
 <div class="header">

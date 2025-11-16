@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>새 글 저장 완료</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/cssFile/style.css">
 </head>
 <body>
 <div class="form-wrapper">
