@@ -1,5 +1,3 @@
 FROM tomcat:9.0
-
-ADD target/*.war /usr/local/tomcat/webapps/
-
+COPY ./src/main/webapp /usr/local/tomcat/webapps/ROOT
 CMD ["catalina.sh", "run"]
