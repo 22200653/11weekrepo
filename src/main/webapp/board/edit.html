@@ -1,16 +1,63 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 82102
-  Date: 25. 11. 16.
-  Time: 오후 10:07
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>게시글 수정</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+<div class="header">
+    <div class="header-title">게시글 수정</div>
+    <a href="list.jsp" class="btn btn-outline">목록으로</a>
+</div>
 
+<div class="form-wrapper">
+    <form action="edit_ok.jsp" method="post">
+        <!-- 글 번호는 hidden 으로 전송 -->
+        <input type="hidden" id="no" name="no">
+
+        <div class="form-row">
+            <label for="title">제목 *</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+
+        <div class="form-row">
+            <label for="writer">작성자 *</label>
+            <input type="text" id="writer" name="writer" required>
+        </div>
+
+        <div class="form-row">
+            <label for="category">카테고리 *</label>
+            <select id="category" name="category">
+                <option value="공지">공지</option>
+                <option value="자유">자유</option>
+                <option value="질문">질문</option>
+                <option value="기타">기타</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="content">내용 *</label>
+            <textarea id="content" name="content" rows="8" required></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">저장</button>
+            <a href="list.jsp" class="btn btn-outline">취소</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    // URL 파라미터를 읽어서 form에 채워 넣기
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('no').value = params.get('no') || '';
+    document.getElementById('title').value = params.get('title') || '';
+    document.getElementById('writer').value = params.get('writer') || '';
+    document.getElementById('content').value = params.get('content') || '';
+
+    const category = params.get('category') || '자유';
+    document.getElementById('category').value = category;
+</script>
 </body>
 </html>
